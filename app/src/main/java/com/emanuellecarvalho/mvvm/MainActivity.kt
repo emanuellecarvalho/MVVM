@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
         // Observando a lista do LiveData pra quando ela receber um valor que é quando o postvalue for executado
         //  e vai receber uma lista de lives e a MainActivity vai receber através do Observer e vai mostrar na RecyclerView
         viewModel.liveList.observe(this, Observer { lives ->
-            Log.i("AAAAA", "onStart")
+            Log.i("MANU", "liveList.observe")
             adapter.setLiveList(lives)
         })
         // Qaundo der falha, ele pega a mensagem de erro e mostra na UI
@@ -59,6 +59,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+        Log.i("MANU", "onResume MainActivity")
         // A tela vai ser atualizada toda vez que o usuário estiver nela
         viewModel.getAllLives()
     }
